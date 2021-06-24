@@ -1,5 +1,11 @@
-node {
+pipeline  {
 
+agent {
+        docker {
+                                        label 'docker-host'
+                                        image 'alpine' 
+                                        args '-v C:\Program Files\Docker Toolbox' 
+                                } 
   checkout scm
   def dockerImage
 
